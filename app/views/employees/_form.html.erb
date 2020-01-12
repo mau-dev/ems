@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :birth_date %>
-    <%= form.date_select :birth_date %>
+    <%= form.date_select :birth_date, start_year: Date.today.year - 110, end_year: Date.today.year %>
   </div>
 
   <div class="field">
@@ -48,7 +48,9 @@
 
   <div class="field">
     <%= form.label :hierarchy_id %>
-    <%= form.text_field :hierarchy_id %>
+    <%#<%= form.text_field :hierarchy_id %>
+     <%= form.text_field :hierarchy_id %>
+    <%#  <%= form.collection_select :parent_id, Hierarchy.arrange_as_array({:order => 'name'}, @hierarchy.possible_parents) , :id, :name_for_selects, :include_blank => true %>
   </div>
 
   <div class="actions">

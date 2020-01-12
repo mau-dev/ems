@@ -5,11 +5,13 @@ class HierarchiesController < ApplicationController
   # GET /hierarchies.json
   def index
     @hierarchies = Hierarchy.all
+    # @hierarchies = Hierarchy.arrange_as_array({:order => 'name'}, @hierarchy.possible_parents)
   end
 
   # GET /hierarchies/1
   # GET /hierarchies/1.json
   def show
+
   end
 
   # GET /hierarchies/new
@@ -69,6 +71,6 @@ class HierarchiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hierarchy_params
-      params.require(:hierarchy).permit(:name, :ancestry_id)
+      params.require(:hierarchy).permit(:name, :parent_id, :children_id)
     end
 end

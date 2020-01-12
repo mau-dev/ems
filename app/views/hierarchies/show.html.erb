@@ -4,6 +4,14 @@
   <strong>Name:</strong>
   <%= @hierarchy.name %>
 </p>
+<p>
+  <strong>Reports to:</strong>
+  <%= @hierarchy.parent.name %>
+</p>
+<p>
+  <strong>Is supervising:</strong>
+  <%= @hierarchy.children.name %>
+</p>
 
 <%= link_to 'Edit', edit_hierarchy_path(@hierarchy) %> |
 <%= link_to 'Back', hierarchies_path %>
