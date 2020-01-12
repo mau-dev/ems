@@ -69,6 +69,6 @@ class HierarchiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hierarchy_params
-      params.require(:hierarchy).permit(:name)
+      params.require(:hierarchy).permit(:name, :ancestry_id)
     end
 end
