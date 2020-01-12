@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last_name: MyString
+  first_name: MyString
+  birth_date: 2020-01-12
+  designation: MyString
+  department: MyString
+  hiring_date: 2020-01-12
+  salary: 1
+  hierarchy: one
+
+two:
+  last_name: MyString
+  first_name: MyString
+  birth_date: 2020-01-12
+  designation: MyString
+  department: MyString
+  hiring_date: 2020-01-12
+  salary: 1
+  hierarchy: two
