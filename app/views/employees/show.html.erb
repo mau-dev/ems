@@ -40,5 +40,24 @@
   <%= @employee.hierarchy.name %>
 </p>
 
+
+<% if @employee.hierarchy.parent != nil %>
+
+	<p>
+  <strong>Reports to:</strong>
+  <%= @employee.hierarchy.parent.name %>
+
+</p>
+
+<% end %>
+
+
+
+
+<p>
+  <strong>Is supervising:</strong>
+  <%= @employee.hierarchy.children.name %>
+</p>
+
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>

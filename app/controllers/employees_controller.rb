@@ -17,7 +17,7 @@ class EmployeesController < ApplicationController
   def new
     @employee = Employee.new
      @hierarchies = Hierarchy.all
-     @hierarchy_name = Hierarchy.name
+
   end
 
   # GET /employees/1/edit
@@ -28,6 +28,8 @@ class EmployeesController < ApplicationController
   # POST /employees.json
   def create
     @employee = Employee.new(employee_params)
+   #  @hierarchy_name = Employee.hierarchy.name
+   # @hierarchies = Hierarchy.all
 
     respond_to do |format|
       if @employee.save
@@ -72,17 +74,18 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:last_name, :first_name, :birth_date, :designation, :department, :hiring_date, :salary, :hierarchy_id, :ancestry_id)
+      params.require(:employee).permit(:last_name, :first_name, :birth_date, :designation, :department, :hiring_date, :salary, :hierarchy, :hierarchy_name, :hierarchy_id, :ancestry_id, :allow_nil => true)
+       # params.require(:hierarchy).permit(:name, :ancestry_id, :parent_id, :child_id)
     end
 
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hierarchy
-      @hierarchy = Hierarchy.find(params[:id])
-    end
+    # # Use callbacks to share common setup or constraints between actions.
+    # def set_hierarchy
+    #   @hierarchy = Hierarchy.find(params[:id])
+    # end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def hierarchy_params
-      params.require(:hierarchy).permit(:name, :ancestry_id, :parent_id, :child_id)
-    end
+    # # Never trust parameters from the scary internet, only allow the white list through.
+    # def hierarchy_params
+    #   params.require(:hierarchy).permit(:name, :ancestry_id, :parent_id, :child_id)
+    # end
 end

@@ -46,11 +46,18 @@
     <%= form.number_field :salary %>
   </div>
 
+
   <div class="field">
-    <%= form.label :hierarchy_name %>
-    <%#<%= form.text_field :hierarchy_id %>
-     <%= form.text_field :hierarchy_name %>
-    <%#  <%= form.collection_select :parent_id, Hierarchy.arrange_as_array({:order => 'name'}, @hierarchy.possible_parents) , :id, :name_for_selects, :include_blank => true %>
+    <%= form.label :hierarchy_id %>
+    <%= form.collection_select :hierarchy_id, Hierarchy.order(:name), :id, :name, :include_blank => true %>
+  </div>
+   <div class="field">
+    <%= form.label :parent_id %>
+    <%= form.collection_select :parent_id, Hierarchy.order(:name), :id, :name, :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= form.label :child_id %>
+    <%= form.collection_select :child_id, Hierarchy.order(:name), :id, :name, :include_blank => true %>
   </div>
 
   <div class="actions">

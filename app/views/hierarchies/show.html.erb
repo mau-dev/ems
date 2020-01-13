@@ -14,10 +14,16 @@
 
 <% end %>
 
-
 <p>
   <strong>Is supervising:</strong>
-  <%= @hierarchy.children.name %>
+ <%= @hierarchy.children.each  do |child| %>
+
+   <% child.name %>
+   <% end %>
+     <%#  <%= @hierarchy.children.each do |list| %>
+    <%#  <% list.name %>
+    <%#  <% end %>
+
 </p>
 
 <%= link_to 'Edit', edit_hierarchy_path(@hierarchy) %> |
