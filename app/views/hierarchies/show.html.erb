@@ -4,10 +4,17 @@
   <strong>Name:</strong>
   <%= @hierarchy.name %>
 </p>
-<p>
-  <strong>Reports to:</strong>
-  <%= @hierarchy.parent.name %>
-</p>
+
+<% if @hierarchy.parent != nil %>
+
+	<p>
+	  <strong>Reports to:</strong>
+	  <%=  @hierarchy.parent.name %>
+	</p>
+
+<% end %>
+
+
 <p>
   <strong>Is supervising:</strong>
   <%= @hierarchy.children.name %>

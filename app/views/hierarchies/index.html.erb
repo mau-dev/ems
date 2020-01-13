@@ -13,6 +13,7 @@
   <tbody>
     <% @hierarchies.each do |hierarchy| %>
       <tr>
+        <%#<td><%= hierarchy.name %></td>
         <td><%= hierarchy.name %></td>
         <td><%= link_to 'Show', hierarchy %></td>
         <td><%= link_to 'Edit', edit_hierarchy_path(hierarchy) %></td>
