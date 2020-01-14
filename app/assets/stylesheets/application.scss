@@ -15,95 +15,104 @@
  */
 
 body {
-	margin: 0;
+		margin: 0;
 }
 
 text {
-	display: none;
+		display: none;
 }
 
 .nav-space {
-  padding: 1.5em 3em;
+		padding: 1.5em 3em;
 
-  a {
-  	color:#97b226;
-  }
-  span {
-		color: #236df2;
-	}
+		a {
+				color: #97b226;
+		}
+
+		span {
+				color: #236df2;
+		}
 }
 
 .navbar-nav {
-	a {
-		color: #236df2;
-	}
+		a {
+				color: #236df2;
+		}
 }
 
 .future-work {
-	width: 100%;
-	height: auto;
-	padding-top: 2em;
-	margin-left: 15%
+		width: 100%;
+		height: auto;
+		padding-top: 2em;
+		margin-left: 15%
 }
 
 .title-ne {
-	margin-left: 25%;
-	padding-top: 2em;
+		margin-left: 25%;
+		padding-top: 2em;
 }
 
 .col-md-6 {
-	padding: 0;
-	height: 100vh;
+		padding: 0;
+		height: 100vh;
 }
 
 .blue {
-	color:#236df2;
+		color: #236df2;
 }
 
 .green {
-	color:#97b226;
+		color: #97b226;
 }
 
 .link-back {
-	float:right;
+		float: right;
 }
 
-.outer-form-div{
+.outer-form-div {
 
-	width: 90%;
-	padding-top: 4em;
-	margin: 0 auto;
+		width: 90%;
+		padding-top: 4em;
+		margin: 0 auto;
 
-			form {
-					width: 50%;
-					margin: 0 auto;
-
-			}
-			label {
-					margin: 0;
+		form {
+				width: 50%;
+				margin: 0 auto;
 
 		}
-			input, select {
-					border: 1px solid #236df2;
-					border-radius: 4px;
-					padding: 5px 20px;
+
+		label {
+				margin: 0;
 
 		}
+
+		input,
+		select {
+				border: 1px solid #236df2;
+				border-radius: 4px;
+				padding: 5px 20px;
+
+		}
+
 		input {
-			width: 250px;
+				width: 250px;
 		}
 
 		select {
-			background-color: #D0DDEE;
+				background-color: #D0DDEE;
 
 		}
 
 		input[type=submit] {
-			background-color:  #236df2;
-			color: white;
-			width: 250px;
-			padding: 7px 20px;
+				background-color: #236df2;
+				color: white;
+				width: 250px;
+				padding: 7px 20px;
 
 		}
 
+}
+
+.show-single {
+		margin: 5% auto;
 }
