@@ -10,7 +10,7 @@
 * rails db:migrate
 * rails db:seed (for seeeding the data)
 * rails s -p 4000 (to run the server on preferred port, example 4000)
-* Accesse on Localhost:4000
+* Access on Localhost:4000
 
 ### Technologies used:
 * Ruby 
