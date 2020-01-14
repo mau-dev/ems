@@ -74,5 +74,9 @@
 </p> -->
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+
+<%= link_to 'Remove Employee', employee_path,
+				method: :delete,
+				data: { confirm: 'Are you sure?' } %> |
+				<%= link_to 'Back', employees_path %>
 </div>
