@@ -6,11 +6,25 @@ class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
     @hierarchies = Hierarchy.all
+    @employees_tree = Hierarchy.all.arrange
+
+    # @hierarchy = Hierarchy.find(params[:id])
+     respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @hierarchies }
+    end
+
   end
 
   # GET /employees/1
   # GET /employees/1.json
   def show
+      @employee = Employee.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @employee }
+    end
   end
 
   # GET /employees/new

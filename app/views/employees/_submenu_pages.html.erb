@@ -1,0 +1,8 @@
+<ul>
+  <% @hierarchies.each do |hierarchy, children| %>
+    <li>
+      <%= link_to_unless_current hierarchy.name, hierarchy %>
+      <%= render 'submenu_pages', hierarchy: children if children.present? %>
+    </li>
+  <% end %>
+</ul>

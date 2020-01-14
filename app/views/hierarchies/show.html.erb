@@ -14,11 +14,13 @@
 
 <% end %>
 
+
+
 <p>
   <strong>Is supervising:</strong>
  <%= @hierarchy.children.each  do |child| %>
 
-   <% child.name %>
+   <%= child.name %>
    <% end %>
      <%#  <%= @hierarchy.children.each do |list| %>
     <%#  <% list.name %>

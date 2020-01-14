@@ -1,5 +1,17 @@
-<h1>New Employee</h1>
+<div class="container-fluid mt-2">
+	<div class="row">
+		<div class="col-md-6">
+				<h4 class="text-center title-ne  blue">Insert New Employee</h4>
+			<img class="future-work" src="<%= image_url 'work.jpg' %>" />
+		</div>
+		<div class="col-md-6 float-right">
+     	<div class="outer-form-div">
 
-<%= render 'form', employee: @employee %>
 
-<%= link_to 'Back', employees_path %>
+				<%= render 'form', employee: @employee, class: "employee_form" %>
+
+				<%= link_to 'Back', employees_path, class: "link-back" %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -48,15 +48,15 @@
 
 
   <div class="field">
-    <%= form.label :hierarchy_id %>
+    <%= form.label :role %>
     <%= form.collection_select :hierarchy_id, Hierarchy.order(:name), :id, :name, :include_blank => true %>
   </div>
    <div class="field">
-    <%= form.label :parent_id %>
+    <%= form.label :reports_to %>
     <%= form.collection_select :parent_id, Hierarchy.order(:name), :id, :name, :include_blank => true %>
   </div>
   <div class="field">
-    <%= form.label :child_id %>
+    <%= form.label :is_supervising %>
     <%= form.collection_select :child_id, Hierarchy.order(:name), :id, :name, :include_blank => true %>
   </div>
 

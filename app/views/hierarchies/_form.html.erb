@@ -20,8 +20,8 @@
     <%= form.collection_select :parent_id, Hierarchy.order(:name), :id, :name, :include_blank => true %>
   </div>
   <div class="field">
-    <%= form.label :child_id %>
-    <%= form.collection_select :child_id, Hierarchy.order(:name), :id, :name, :include_blank => true %>
+    <%= form.label :children_id %>
+    <%= form.collection_select :children_id, Hierarchy.order(:name), :id, :name, :include_blank => true %>
   </div>
 
   <div class="actions">

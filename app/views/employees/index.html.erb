@@ -1,6 +1,48 @@
+
+
+
+
+
+ <% @employees.each do |employee| %>
+     <%= employee.hierarchy.root.name %>
+
+
+        <% if employee.hierarchy.parent != nil %> <%= employee.hierarchy.parent.name %>  <% end %>
+         <%= employee.hierarchy.name %>
+      <%= employee.hierarchy.children.name %>
+
+    <% end %>
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Employees</h1>
+
+
+<!-- <div id="submenu">
+ <%# <%= render 'submenu_pages', hierarchies: @employees.hierarchy.root.descendants.arrange %>
+</div> -->
+
+<!-- <ul>
+	 <%# <% @hierarchies.each do |role| %>
+ <%# 	<li><%=role.root.descendants.arrange%></li>
+ <%# 	  <li><%=role.name%>  <%# <%=role.parent.name%> </li>
+
+
+ <%# <% end %>
+</ul>
+
+<ul>
+ <%# 	<% @employees.each do |role| %>
+
+	 <%#   <li><%=role.hierarchy.parent.name%>  <%# <%=role.hierarchy.name %>  <%# <%=role.hierarchy.children.name%> </li>
+
+
+ <%# <% end %>
+</ul>
+
+ -->
+
 
 <table>
   <thead>
@@ -12,7 +54,9 @@
       <th>Department</th>
       <th>Hiring date</th>
       <th>Salary</th>
-      <th>Hierarchy</th>
+      <th>Role</th>
+      <th>Reports to</th>
+      <th>Is supervising</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,6 +72,13 @@
         <td><%= employee.hiring_date %></td>
         <td><%= employee.salary %></td>
         <td><%= employee.hierarchy.name %></td>
+        <td><% if employee.hierarchy.parent != nil %> <%= employee.hierarchy.parent.name %>  <% end %></td>
+        <td> <ul> <%= employee.hierarchy.children.each  do |child| %>
+
+
+   <li><%= child.name %></li>
+   <% end %></ul></td>
+
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -39,3 +90,58 @@
 <br>
 
 <%= link_to 'New Employee', new_employee_path %>
+
+
+
+
+
+
+<main class="all-employees">
+
+		<div class="container">
+				<% @employees.each_slice(3) do |employee| %>
+				<div class="card-row d-flex justify-content-around py-5">
+						<% employee.each do |card| %>
+						<div class="card float-left justify-content-around" style="width: 22rem;">
+
+										<div class="row my-4 px-4">
+												<div class="col-md-5  float-left">
+														<img src="<%= image_url 'employee-img.png' %>"class="card-img-top listing-small-img" style="width: 120px; height:100px;" alt="..." />
+												</div>
+												<div class="col-md-7 py-2 float-right">
+														<p class="card-text com-md-7 listing-small-duration px-3"><span class="icon-duration mr-2"><img width="15px" src="<%= image_url 'duration-icon.png' %>" /></span>
+																<%= card.duration %>
+														</p>
+														<p class="card-text com-md-7 listing-small-location px-3"><span class="icon-duration mr-2 "><img width="15px" src="<%= image_url 'location-icon.png' %>" /></span>
+																<%= card.location%>
+														</p>
+												</div>
+										</div>
+										<div class="card-body">
+												<a href="/listings/<%= card.id%>">
+														<h5 class="card-title">
+																<%= card.job_title %>
+														</h5>
+												</a>
+												<p class="listing-small-description">
+														<strong class="bold-description">What you’ll be doing:</strong><br />
+														<%= card.description.first(80) %><span>...</span>
+												</p>
+												<% if @all_explorers_profiles_listings.where(:listing_id => card.id).length <= 5 %>
+												<p class="listing-small-description"> Be the first 5 to apply! </p>
+												<% else %>
+												<p class="listing-small-description">
+														<%= @all_explorers_profiles_listings.where(:listing_id => card.id).length %> applicant(s) have applied</p>
+												<% end %>
+												<% time = card.created_at.localtime(utc_offset = nil) %>
+												<p class="listing-small-description posted-on">Posted on <cite title="Source Title">
+																<%= time.strftime("%e %B %Y") %></cite>
+														<p>
+										</div>
+						</div>
+
+						<% end %>
+				</div>
+				<% end %>
+		</div>
+</main>

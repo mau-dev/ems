@@ -36,7 +36,7 @@
 </p>
 
 <p>
-  <strong>Hierarchy:</strong>
+  <strong>Role:</strong>
   <%= @employee.hierarchy.name %>
 </p>
 
@@ -52,12 +52,24 @@
 <% end %>
 
 
+<p>
+  <strong>Is supervising :</strong>
+ <%= @employee.hierarchy.children.each  do |child| %>
+
+   <%= child.name %>
+   <% end %>
+     <%#  <%= @hierarchy.children.each do |list| %>
+    <%#  <% list.name %>
+    <%#  <% end %>
+
+</p>
 
 
+<!--
 <p>
   <strong>Is supervising:</strong>
-  <%= @employee.hierarchy.children.name %>
-</p>
+ <%#  <%= @employee.hierarchy.children.name %>
+</p> -->
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>

@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	margin: 0;
+}
+
+text {
+	display: none;
+}
+
+.nav-space {
+  padding: 1.5em 3em;
+
+  a {
+  	color:#97b226;
+  }
+  span {
+		color: #236df2;
+	}
+}
+
+.navbar-nav {
+	a {
+		color: #236df2;
+	}
+}
+
+.future-work {
+	width: 100%;
+	height: auto;
+	padding-top: 2em;
+	margin-left: 15%
+}
+
+.title-ne {
+	margin-left: 25%;
+	padding-top: 2em;
+}
+
+.col-md-6 {
+	padding: 0;
+	height: 100vh;
+}
+
+.blue {
+	color:#236df2;
+}
+
+.green {
+	color:#97b226;
+}
+
+.link-back {
+	float:right;
+}
+
+.outer-form-div{
+
+	width: 90%;
+	padding-top: 4em;
+	margin: 0 auto;
+
+			form {
+					width: 50%;
+					margin: 0 auto;
+
+			}
+			label {
+					margin: 0;
+
+		}
+			input, select {
+					border: 1px solid #236df2;
+					border-radius: 4px;
+					padding: 5px 20px;
+
+		}
+		input {
+			width: 250px;
+		}
+
+		select {
+			background-color: #D0DDEE;
+
+		}
+
+		input[type=submit] {
+			background-color:  #236df2;
+			color: white;
+			width: 250px;
+			padding: 7px 20px;
+
+		}
+
+}
