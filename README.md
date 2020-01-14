@@ -1,8 +1,8 @@
 # Employee Management System Assignment
 
 ### Installation:
-Install Ruby & Rails (latest version)
-Install PostgreSQL
+* Install Ruby & Rails (latest version)
+* Install PostgreSQL
 
 ### Dependencies to run:
 * bundle install
@@ -13,12 +13,12 @@ Install PostgreSQL
 * Accesse on Localhost:4000
 
 ### Technologies used:
-Ruby 
-Ruby on Rails
-PostgreSQL
-Bootstrap
-SASS
-Ancestry GEM
+* Ruby 
+* Ruby on Rails
+* PostgreSQL
+* Bootstrap
+* SASS
+* Ancestry GEM
 
 
 ### Approach
